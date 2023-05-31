@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 290px;
+}
+
+
+.photo-frame {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .photo-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 5px solid #ff0000;
+    animation: frame-color 5s infinite linear;
+  }
+  
+  @keyframes frame-color {
+    0% {
+      transform: translateX(0);
+      border-color: #ff0000;
+    }
+    25% {
+      transform: translateX(100%);
+      border-color: #ff8000;
+    }
+    50% {
+      transform: translateY(100%);
+      border-color: #ffff00;
+    }
+    75% {
+      transform: translateY(0);
+      border-color: #00ff00;
+    }
+    100% {
+      transform: translateX(0);
+      border-color: #0000ff;
+    }
+  }
+  
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
